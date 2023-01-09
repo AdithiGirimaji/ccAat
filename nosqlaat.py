@@ -307,7 +307,7 @@ if submit_button:
             session.execute( f"ALTER TABLE aat_survey ADD {new_field} text")
             session.execute(f"UPDATE aat_survey set {new_field} = '{new_field_ans}' where id={next_id} and age={age}")
             new_count=int_count+1
-            session.execute(f"UPDATE aat_survey set count = {new_count} where id={next_id} and age={age}")
+            session.execute(f"UPDATE aat_survey set count = {new_count} where id=-1 and age=-1")
 
 
 # select count(*) from aat_survey where country='Canada' and treatment='Yes';
